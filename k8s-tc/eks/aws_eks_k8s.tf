@@ -45,9 +45,9 @@ resource "aws_eks_addon" "eks-pod-identity-agent" {
 }
 
 
-resource "aws_eks_node_group" "ng2" {
+resource "aws_eks_node_group" "ng1" {
   cluster_name    = aws_eks_cluster.example.name
-  node_group_name = "ng2"
+  node_group_name = "ng1"
   disk_size = var.disk_size_ng
   ami_type = "AL2_x86_64"
   instance_types = [var.instance_types_ng]
