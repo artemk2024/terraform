@@ -40,6 +40,5 @@ variable "AWS_SECRET_ACCESS_KEY" {
 }
 
 variable "k8s_subnet_public1_eu_west_1a_id" {
-
   type = string
 }
