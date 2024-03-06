@@ -13,7 +13,11 @@ variable "aws_instance_type_rabbitmq" {
 variable "disk_size_rabbitmq" {
   default = 60
 }
-
+############## IAM ################
+variable "eks_node_role" {
+  default = "AmazonEKSNodeRole"
+  type = string
+}
 
 ############## Terraform Cloud  ################
 variable "AWS_DEFAULT_REGION" {
