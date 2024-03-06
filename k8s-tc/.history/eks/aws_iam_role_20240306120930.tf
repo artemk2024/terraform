@@ -24,11 +24,6 @@ resource "aws_iam_role_policy_attachment" "eks_cni_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
 }
 
-resource "aws_iam_role_policy_attachment" "example-AmazonEC2ContainerRegistryReadOnly" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-  role       = aws_iam_role.eks_node_role.name
-}
-
 
 resource "aws_iam_role" "eks_cluster_role" {
   name               = "AmazonEKSCluster_DevOps"
