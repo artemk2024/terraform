@@ -1,5 +1,5 @@
 resource "aws_eks_node_group" "asterisk" {
-  cluster_name    = data.aws_eks_cluster.example.name
+  cluster_name    = aws_eks_cluster.example.name
   node_group_name = "asterisk"
   disk_size = var.disk_size_asterisk
   ami_type = "AL2_x86_64"
