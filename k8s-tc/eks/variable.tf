@@ -59,7 +59,7 @@ variable "disk_size_rabbitmq" {
 
 ############## Whisper ################
 variable "aws_instance_type_whisper" {
-  default = "c4a.16xlarge"
+  default = "t3.medium"
   type    = string
 }
 
