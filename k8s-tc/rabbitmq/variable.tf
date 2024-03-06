@@ -39,7 +39,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
   default     = "" # This is set in Terraform Cloud - No need to set it here
 }
 
-variable "k8s_subnet_public1_eu_west_1a_id" {
+variable "k8s_subnet_public1" {
   type        = string
   default     = "" # This is set in Terraform Cloud - No need to set it here
 }
