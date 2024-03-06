@@ -32,7 +32,7 @@ resource "aws_iam_role_policy_attachment" "AmazonEC2ContainerRegistryReadOnly" {
 
 
 
-
+###############################################################################
 
 
 resource "aws_iam_role" "eks_cluster_role" {
@@ -49,4 +49,20 @@ resource "aws_iam_role" "eks_cluster_role" {
       }
     ]
   })
+}
+
+
+resource "aws_iam_role_policy_attachment" "eks_cluster_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+  role       = aws_iam_role.eks_cluster_role.name
+}
+
+resource "aws_iam_role_policy_attachment" "eks_service_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
+  role       = aws_iam_role.eks_cluster_role.name
+}
+
+resource "aws_iam_role_policy_attachment" "eks_vpc_controller_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+  role       = aws_iam_role.eks_cluster_role.name
 }
