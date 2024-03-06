@@ -37,10 +37,10 @@ variable "aws_instance_type_enaclve" {
   type    = string
 }
 
-variable "aws_ami_enaclve" {
-  default = "ami-0781386be1d49672a123"
-  type    = string
-}
+# variable "aws_ami_enaclve" {
+#   default = "ami-0781386be1d49672a123"
+#   type    = string
+# }
 
 variable "disk_size_enaclve" {
   default = 100
