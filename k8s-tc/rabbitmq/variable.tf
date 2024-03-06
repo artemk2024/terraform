@@ -19,11 +19,6 @@ variable "eks_node_role" {
   type = string
 }
 
-############## VPC Subnet ################
-variable "k8s_subnet_public1_eu_west_1a" {
-  default = "AmazonEKSNodeRole"
-  type = string
-}
 
 ############## Terraform Cloud  ################
 variable "AWS_DEFAULT_REGION" {
@@ -42,4 +37,9 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "The AWS secret access key"
   type        = string
   default     = "" # This is set in Terraform Cloud - No need to set it here
+}
+
+variable "k8s_subnet_public1_eu_west_1a_id" {
+
+  type = string
 }

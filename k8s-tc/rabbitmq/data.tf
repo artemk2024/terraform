@@ -7,5 +7,5 @@ data "aws_iam_role" "eks_node_role" {
 }
 
 data "aws_subnet" "k8s_subnet_public1_eu_west_1a" {
-  name = var.eks_node_role
+  id = var.k8s_subnet_public1_eu_west_1a_id 
 }
