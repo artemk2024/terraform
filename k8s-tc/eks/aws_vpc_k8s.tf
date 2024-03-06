@@ -21,11 +21,11 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_subnet" "k8s_subnet_public1_eu_west_1a" {
   vpc_id            = aws_vpc.k8s.id
   cidr_block        = "10.20.0.0/20"
-  availability_zone = "eu-west-1a"
+  availability_zone = var.availability_zone_a
   map_public_ip_on_launch = true
 
   tags = {
-    "Name"                            = "public1-eu-west-1a"
+    "Name"                            = "public1"
     "kubernetes.io/role/internal-elb" = "1"
     "kubernetes.io/cleuter/demo-2"    = "owned"
   }
@@ -34,10 +34,10 @@ resource "aws_subnet" "k8s_subnet_public1_eu_west_1a" {
 resource "aws_subnet" "k8s_subnet_private1_eu_west_1a" {
   vpc_id            = aws_vpc.k8s.id
   cidr_block        = "10.20.128.0/20"
-  availability_zone = "eu-west-1a"
+  availability_zone = var.availability_zone_a
 
   tags = {
-    "Name"                            = "private1-eu-west-1a"
+    "Name"                            = "private1"
     "kubernetes.io/role/internal-elb" = "1"
     "kubernetes.io/cleuter/demo-2"    = "owned"
   }
@@ -46,11 +46,11 @@ resource "aws_subnet" "k8s_subnet_private1_eu_west_1a" {
 resource "aws_subnet" "k8s_subnet_public2_eu_west_1b" {
   vpc_id                  = aws_vpc.k8s.id
   cidr_block              = "10.20.16.0/20"
-  availability_zone       = "eu-west-1b"
+  availability_zone       = var.availability_zone_b
   map_public_ip_on_launch = true
 
   tags = {
-    "Name"                         = "public2-eu-west-1a"
+    "Name"                         = "public2"
     "kubernetes.io/role/elb"       = "1"
     "kubernetes.io/cleuter/demo-2" = "owned"
   }
@@ -59,10 +59,10 @@ resource "aws_subnet" "k8s_subnet_public2_eu_west_1b" {
 resource "aws_subnet" "k8s_subnet_private2_eu_west_1b" {
   vpc_id                  = aws_vpc.k8s.id
   cidr_block              = "10.20.144.0/20"
-  availability_zone       = "eu-west-1b"
+  availability_zone       = var.availability_zone_b
 
   tags = {
-    "Name"                         = "private2-eu-west-1b"
+    "Name"                         = "private2"
     "kubernetes.io/role/elb"       = "1"
     "kubernetes.io/cleuter/demo-2" = "owned"
   }

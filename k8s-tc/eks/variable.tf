@@ -5,6 +5,21 @@ variable "vpc_name" {
 }
 
 
+variable "availability_zone_a" {
+  default = "eu-west-2a"
+  type    = string
+}
+
+variable "availability_zone_b" {
+  default = "eu-west-2b"
+  type    = string
+}
+
+variable "availability_zone_b" {
+  default = "eu-west-2c"
+  type    = string
+}
+
 ############## EKS ################
 variable "instance_types_ng" {
   default = "t3.medium"
